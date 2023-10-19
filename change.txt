@@ -11,7 +11,7 @@ fptr --> myfptr
 qflag --> myqflag
 functions:
 count_word --> word_counting
-free_everything --> free_all
+free_everything --> all_freeing
 strtow --> stringtow
 dlistint_len --> thelistint_len
 add_dnodeint --> adding_nodeint
@@ -19,3 +19,5 @@ add_dnodeint_end --> adding_nodeint_end
 print_dlistint --> printing_thelistint
 delete_dnodeint_at_index --> del_node_atindex
 get_dnodeint_at_index --> get_node_atindex
+insert_dnodeint_at_index --> push_node_atindex
+free_dlistint --> freeing_thelists
