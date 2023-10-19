@@ -2,15 +2,13 @@
 #include "lists.h"
 
 /**
- * count_word - helper function to count the number of words in a string
- * @s: string to evaluate
- *
- * Return: number of words
+ * word_counting - count string numbers
+ * @s: valuated string
+ * Return: words number
  */
-int count_word(char *s)
+int word_counting(char *s)
 {
 	int flag, c, w;
-
 	flag = 0;
 	w = 0;
 
@@ -28,19 +26,17 @@ int count_word(char *s)
 	return (w);
 }
 /**
- * **strtow - splits a string into words
- * @str: string to split
- *
- * Return: pointer to an array of strings (Success)
- * or NULL (Error)
+ * **stringtow - cut string to words
+ * @str: the string to be splited
+ * Return: pointer to an array of strings in success
+ * or NULL in fail
  */
-char **strtow(char *str)
+char **stringtow(char *str)
 {
 	char **matrix, *tmp;
 	int i, k = 0, len = 0, words, c = 0, start, end;
-
 	len = strlen(str);
-	words = count_word(str);
+	words = word_counting(str);
 	if (words == 0)
 		return (NULL);
 
@@ -76,10 +72,10 @@ char **strtow(char *str)
 }
 
 /**
- * free_everything - frees arrays of strings
- * @args: array of strings to free
+ * all_freeing - make empty array string
+ * @args: freeable array strings
  */
-void free_everything(char **args)
+void all_freeing(char **args)
 {
 	int i;
 

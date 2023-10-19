@@ -71,9 +71,9 @@ void push_handler(stack_t **stack, unsigned int ln_number)
 	num = atoi(data.words[1]);
 
 	if (data.myqflag == 0)
-		new = add_dnodeint(stack, num);
+		new = adding_nodeint(stack, num);
 	else if (data.myqflag == 1)
-		new = add_dnodeint_end(stack, num);
+		new = adding_nodeint_end(stack, num);
 	if (!new)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -91,5 +91,5 @@ void pall_handler(stack_t **stack, unsigned int ln_number)
 {
 	(void)ln_number;
 	if (*stack)
-		print_dlistint(*stack);
+		printing_thelistint(*stack);
 }

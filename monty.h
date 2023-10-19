@@ -38,13 +38,11 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
- * struct myargs_s - structure of arguments from main
- * @av: name of the file from the command line
- * @ac: number of arguments from main
- * @ln_number: number of the current line in the file
- *
- * Description: arguments passed to main from the command line
- * used in different functions, organized in a struct for clarity
+ * struct myargs_s - structure of main
+ * @av: command line file name
+ * @ac: main arg numbers
+ * @ln_number: ncurrent line number
+ * Description: command line passing arguments
  */
 typedef struct myargs_s
 {
@@ -54,12 +52,12 @@ typedef struct myargs_s
 } myargs_t;
 
 /**
- * struct mydata_s - extern data to access inside functions
- * @line: line from the file
- * @words: parsed line
- * @stack: pointer to the stack
- * @myfptr: file pointer
- * @myqflag: flag for queue or stack
+ * struct mydata_s - extr data to be accessible in functions
+ * @line: line of file
+ * @words: line parse
+ * @stack: pointer for stack
+ * @myfptr: pointer of
+ * @myqflag: flags of stack and queue
  */
 typedef struct mydata_s
 {
@@ -124,10 +122,10 @@ void queue_handler(stack_t **stack, unsigned int ln_number);
 void pchar_handler(stack_t **stack, unsigned int ln_number);
 void pstr_handler(stack_t **stack, unsigned int ln_number);
 
-/* strtow.c */
-int count_word(char *s);
-char **strtow(char *str);
-void free_everything(char **args);
+/* stringtow.c */
+int word_counting(char *s);
+char **stringtow(char *str);
+void all_freeing(char **args);
 
 /* free.c */
 void free_all(int all);

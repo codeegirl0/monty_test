@@ -10,10 +10,10 @@ void sub_handler(stack_t **stack, unsigned int ln_number)
 {
 	int sub = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_node_atindex(*stack, 0);
+	stack_t *node_1 = get_node_atindex(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, SUB_FAIL, ln_number);
 		free_all(1);
@@ -21,9 +21,9 @@ void sub_handler(stack_t **stack, unsigned int ln_number)
 	}
 
 	sub = node_1->n - node_0->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, sub);
+	del_node_atindex(stack, 0);
+	del_node_atindex(stack, 0);
+	node = adding_nodeint(stack, sub);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -41,10 +41,10 @@ void div_handler(stack_t **stack, unsigned int ln_number)
 {
 	int div = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_node_atindex(*stack, 0);
+	stack_t *node_1 = get_node_atindex(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, DIV_FAIL, ln_number);
 		free_all(1);
@@ -59,9 +59,9 @@ void div_handler(stack_t **stack, unsigned int ln_number)
 	}
 
 	div = node_1->n / node_0->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, div);
+	del_node_atindex(stack, 0);
+	del_node_atindex(stack, 0);
+	node = adding_nodeint(stack, div);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -79,10 +79,10 @@ void mul_handler(stack_t **stack, unsigned int ln_number)
 {
 	int mul = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_node_atindex(*stack, 0);
+	stack_t *node_1 = get_node_atindex(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, MUL_FAIL, ln_number);
 		free_all(1);
@@ -90,9 +90,9 @@ void mul_handler(stack_t **stack, unsigned int ln_number)
 	}
 
 	mul = node_1->n * node_0->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, mul);
+	del_node_atindex(stack, 0);
+	del_node_atindex(stack, 0);
+	node = adding_nodeint(stack, mul);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -110,10 +110,10 @@ void mod_handler(stack_t **stack, unsigned int ln_number)
 {
 	int mod = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_node_atindex(*stack, 0);
+	stack_t *node_1 = get_node_atindex(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, MOD_FAIL, ln_number);
 		free_all(1);
@@ -128,9 +128,9 @@ void mod_handler(stack_t **stack, unsigned int ln_number)
 	}
 
 	mod = node_1->n % node_0->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, mod);
+	del_node_atindex(stack, 0);
+	del_node_atindex(stack, 0);
+	node = adding_nodeint(stack, mod);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);

@@ -1,12 +1,11 @@
 #include "monty.h"
 
 /**
- * dlistint_len - returns the number of nodes in a doubly linked list
- * @h: pointer to the list
- *
- * Return: number of nodes
+ * thelistint_len - return nodes  number
+ * @h: pointer of list
+ * Return: the number of nodes
  */
-size_t dlistint_len(const listint_t *h)
+size_t thelistint_len(const listint_t *h)
 {
 	size_t nodes = 0;
 
@@ -23,43 +22,37 @@ size_t dlistint_len(const listint_t *h)
 }
 
 /**
- * add_dnodeint - adds a new node at the beginning of a doubly linked list
- * @head: double pointer to the list
- * @n: data to insert in the new node
- *
- * Return: the address of the new element, or NULL if it failed
+ * adding_nodeint - adding new node at doubly list beginning
+ * @head:  pointer of list
+ * @n: inserted data in new node
+ * Return: new element address , or NULL in failed
  */
-listint_t *add_dnodeint(listint_t **head, const int n)
+listint_t *adding_nodeint(listint_t **head, const int n)
 {
 	listint_t *new;
 
 	if (!head)
 		return (NULL);
-
 	new = malloc(sizeof(listint_t));
 	if (!new)
 		return (NULL);
-
 	new->n = n;
-
 	new->next = *head;
 	new->prev = NULL;
 
 	if (*head)
 		(*head)->prev = new;
-
 	*head = new;
 
 	return (new);
 }
 
 /**
- * print_dlistint - prints a doubly linked list
- * @h: pointer to the list
- *
- * Return: number of nodes in the list
+ * printing_thelistint - make linked list doubly
+ * @h: pointer of list
+ * Return: nodes number in list
  */
-size_t print_dlistint(const listint_t *h)
+size_t printing_thelistint(const listint_t *h)
 {
 	size_t nodes = 0;
 
@@ -77,14 +70,12 @@ size_t print_dlistint(const listint_t *h)
 }
 
 /**
- * delete_dnodeint_at_index - deltes a node in a doubly linked list
- * at a given index
- * @head: double pointer to the list
- * @index: index of the node to delete
- *
- * Return: 1 on success, -1 on failure
+ * del_node_atindex - delete nodes in index
+ * @head: pointer to list
+ * @index: index of delete node
+ * Return: 1 if success or -1 if failure
  */
-int delete_dnodeint_at_index(listint_t **head, unsigned int index)
+int del_node_atindex(listint_t **head, unsigned int index)
 {
 	listint_t *temp = *head;
 	unsigned int i = 0;
@@ -116,13 +107,12 @@ int delete_dnodeint_at_index(listint_t **head, unsigned int index)
 }
 
 /**
- * get_dnodeint_at_index - gets the nth node of a doubly linked list
- * @head: pointer to the list
- * @index: index of the node to return
- *
- * Return: address of the node, or if it does not exist, NULL
+ * get_node_atindex - getting  the nth nodes 
+ * @head: pointer of list
+ * @index: index of returned node
+ * Return: address of node or NULL
  */
-listint_t *get_dnodeint_at_index(listint_t *head, unsigned int index)
+listint_t *get_node_atindex(listint_t *head, unsigned int index)
 {
 	unsigned int i = 0;
 

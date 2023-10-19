@@ -36,7 +36,7 @@ void pop_handler(stack_t **stack, unsigned int ln_number)
 		exit(EXIT_FAILURE);
 	}
 
-	delete_dnodeint_at_index(stack, 0);
+	del_node_atindex(stack, 0);
 }
 
 /**
@@ -49,17 +49,17 @@ void swap_handler(stack_t **stack, unsigned int ln_number)
 	stack_t *temp = *stack, *node = NULL;
 	int num;
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, SWAP_FAIL, ln_number);
 		free_all(1);
 		exit(EXIT_FAILURE);
 	}
 
-	temp = get_dnodeint_at_index(*stack, 0);
+	temp = get_node_atindex(*stack, 0);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, 0);
-	node = insert_dnodeint_at_index(stack, 1, num);
+	del_node_atindex(stack, 0);
+	node = push_node_atindex(stack, 1, num);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);
@@ -77,10 +77,10 @@ void add_handler(stack_t **stack, unsigned int ln_number)
 {
 	int sum = 0;
 	stack_t *node = NULL;
-	stack_t *node_0 = get_dnodeint_at_index(*stack, 0);
-	stack_t *node_1 = get_dnodeint_at_index(*stack, 1);
+	stack_t *node_0 = get_node_atindex(*stack, 0);
+	stack_t *node_1 = get_node_atindex(*stack, 1);
 
-	if (dlistint_len(*stack) < 2)
+	if (thelistint_len(*stack) < 2)
 	{
 		dprintf(STDERR_FILENO, ADD_FAIL, ln_number);
 		free_all(1);
@@ -88,9 +88,9 @@ void add_handler(stack_t **stack, unsigned int ln_number)
 	}
 
 	sum = node_0->n + node_1->n;
-	delete_dnodeint_at_index(stack, 0);
-	delete_dnodeint_at_index(stack, 0);
-	node = add_dnodeint(stack, sum);
+	del_node_atindex(stack, 0);
+	del_node_atindex(stack, 0);
+	node = adding_nodeint(stack, sum);
 	if (!node)
 	{
 		dprintf(STDERR_FILENO, MALLOC_FAIL);

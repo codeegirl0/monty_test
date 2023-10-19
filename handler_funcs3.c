@@ -15,10 +15,10 @@ void rotl_handler(stack_t **stack, unsigned int ln_number)
 
 	if (*stack == NULL)
 		return;
-	temp = get_dnodeint_at_index(*stack, 0);
+	temp = get_node_atindex(*stack, 0);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, 0);
-	add_dnodeint_end(stack, num);
+	del_node_atindex(stack, 0);
+	adding_nodeint_end(stack, num);
 }
 
 /**
@@ -29,16 +29,16 @@ void rotl_handler(stack_t **stack, unsigned int ln_number)
 void rotr_handler(stack_t **stack, unsigned int ln_number)
 {
 	stack_t *temp = *stack;
-	int num = 0, len = dlistint_len(*stack);
+	int num = 0, len = thelistint_len(*stack);
 
 	(void)ln_number;
 
 	if (*stack == NULL)
 		return;
-	temp = get_dnodeint_at_index(*stack, len - 1);
+	temp = get_node_atindex(*stack, len - 1);
 	num = temp->n;
-	delete_dnodeint_at_index(stack, len - 1);
-	add_dnodeint(stack, num);
+	del_node_atindex(stack, len - 1);
+	adding_nodeint(stack, num);
 }
 
 /**

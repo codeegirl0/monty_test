@@ -9,3 +9,13 @@ data_s --> mydata_s
 data_t --> mydata_t
 fptr --> myfptr
 qflag --> myqflag
+functions:
+count_word --> word_counting
+free_everything --> free_all
+strtow --> stringtow
+dlistint_len --> thelistint_len
+add_dnodeint --> adding_nodeint
+add_dnodeint_end --> adding_nodeint_end
+print_dlistint --> printing_thelistint
+delete_dnodeint_at_index --> del_node_atindex
+get_dnodeint_at_index --> get_node_atindex

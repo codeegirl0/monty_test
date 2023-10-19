@@ -4,12 +4,9 @@
 mydata_t data = DATA_INIT;
 
 /**
- * monty - helper function for main function
- * @args: pointer to struct of arguments from main
- *
- * Description: opens and reads from the file
- * containing the opcodes, and calls the function
- * that will find the corresponding executing function
+ * monty - main helper function
+ * @args: the pointer to  arg struct 
+ * Description: opens reads and call function from the file
  */
 void monty(myargs_t *args)
 {
@@ -34,7 +31,7 @@ void monty(myargs_t *args)
 		get = getline(&(data.line), &len, data.myfptr);
 		if (get < 0)
 			break;
-		data.words = strtow(data.line);
+		data.words = stringtow(data.line);
 		if (data.words[0] == NULL || data.words[0][0] == '#')
 		{
 			free_all(0);
@@ -54,11 +51,10 @@ void monty(myargs_t *args)
 }
 
 /**
- * main - entry point for monty bytecode interpreter
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: EXIT_SUCCESS or EXIT_FAILURE
+ * main - the entry point of monty bytecode interpreter
+ * @argc: arguments number
+ * @argv: arguments array
+ * Return: EXIT_SUCCESS in success or EXIT_FAILURE in failed
  */
 int main(int argc, char *argv[])
 {
